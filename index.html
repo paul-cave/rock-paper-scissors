@@ -1,32 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./script.js" defer></script>
 
-  Score
-  Rules
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-</head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <header class="header">
+      <img
+        src="./images/logo-bonus.svg"
+        alt="rock, paper, scissors, lizard, spock logo"
+        class="header__logo"
+      />
+      <div class="score">
+        <h4 class="score__text">Score</h4>
+        <h1 class="score__value">12</h1>
+      </div>
+    </header>
+    <main class="game">
+      <div class="game__initial">
+        <div class="icon icon--scissors">
+          <img
+            src="./images/icon-scissors.svg"
+            alt="scissors icon"
+            class="icon__image"
+          />
+        </div>
+        <div class="icon icon--paper">
+          <img
+            src="./images/icon-paper.svg"
+            alt="paper icon"
+            class="icon__image"
+          />
+        </div>
+        <div class="icon icon--rock">
+          <img
+            src="./images/icon-rock.svg"
+            alt="rock icon"
+            class="icon__image"
+          />
+        </div>
+        <div class="icon icon--lizard">
+          <img
+            src="./images/icon-lizard.svg"
+            alt="lizard icon"
+            class="icon__image"
+          />
+        </div>
+        <div class="icon icon--spock">
+          <img
+            src="./images/icon-spock.svg"
+            alt="spock icon"
+            class="icon__image"
+          />
+        </div>
+      </div>
+      <div class="game__after hidden">
+        <div class="pick--you">
+          <h3 class="heading-3">You Picked</h3>
+          <div class="icon--your-pick">
+            <div class="icon icon--rock">
+              <img
+                src="./images/icon-rock.svg"
+                alt="rock icon"
+                class="icon__image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="pick--house">
+          <h3 class="heading-3">The House Picked</h3>
+          <div class="icon--house-pick icon--winner">
+            <div class="icon icon--spock">
+              <img
+                src="./images/icon-spock.svg"
+                alt="spock icon"
+                class="icon__image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="result">
+          <h1 class="result__text">You Lose</h1>
+          <button class="btn-again">Play Again</button>
+        </div>
+      </div>
+    </main>
+    <button class="btn-rules">Rules</button>
+    <div class="rules hidden">
+      <h3 class="rules__heading">Rules</h3>
+      <button class="rules__close">
+        <img src="./images/icon-close.svg" alt="close icon" />
+      </button>
+      <img
+        src="./images/image-rules-bonus.svg"
+        alt="rules explanation"
+        class="rules__image"
+      />
+    </div>
+    <div class="overlay hidden"></div>
+  </head>
+  <body>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
 </html>

@@ -1,0 +1,60 @@
+:root {
+  --gradient-scissors: linear-gradient(
+    to bottom,
+    hsl(40, 84%, 53%),
+    hsl(39, 89%, 49%)
+  );
+  --gradient-paper: linear-gradient(
+    to bottom,
+    hsl(230, 89%, 65%),
+    hsl(230, 89%, 62%)
+  );
+  --gradient-rock: linear-gradient(
+    to bottom,
+    hsl(349, 70%, 56%),
+    hsl(349, 71%, 52%)
+  );
+  --gradient-lizard: linear-gradient(
+    to bottom,
+    hsl(261, 72%, 63%),
+    hsl(261, 73%, 60%)
+  );
+  --gradient-spock: linear-gradient(
+    to bottom,
+    hsl(189, 58%, 57%),
+    hsl(189, 59%, 53%)
+  );
+  --gradient-background: radial-gradient(
+    circle at top,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+
+  --color-text-dark: hsl(229, 25%, 31%);
+  --color-text-score: hsl(229, 64%, 46%);
+  --color-header-outline: hsl(217, 16%, 45%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-image: var(--gradient-background);
+  color: #fff;
+  height: calc(100vh - 5rem);
+
+  @media only screen and (max-width: 47.5em) {
+    height: calc(100vh - 3rem);
+  }
+}
