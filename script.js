@@ -83,6 +83,8 @@ class App {
       this._createIconMarkup(this.houseMove, "house")
     );
     this.iconHouse = document.querySelector(".icon--house");
+    // iconHouseContainer.style.zIndex = "0";
+    // iconPlayerContainer.style.zIndex = "0";
     this._toggleHouseIconHidden();
     this._resultsInit();
   }
@@ -128,11 +130,17 @@ class App {
     resultText.textContent = resultMap[this.result][0];
     this.score += resultMap[this.result][1];
     score.textContent = this.score;
+    this._addWinnerBackdrop();
+  }
+
+  _addWinnerBackdrop() {
     if (this.result === "win") {
       this.iconPlayer.classList.add("icon--winner");
+      // iconHouseContainer.style.zIndex = "4";
     }
     if (this.result === "lose") {
       this.iconHouse.classList.add("icon--winner");
+      // iconPlayerContainer.style.zIndex = "4";
     }
   }
 

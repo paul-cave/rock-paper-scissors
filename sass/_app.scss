@@ -186,12 +186,10 @@
       &--you-container {
         grid-area: you;
         position: relative;
-        z-index: 4;
       }
       &--house-container {
         grid-area: house;
         position: relative;
-        // z-index: 4;
       }
       &--empty {
         width: 22.5rem;
@@ -217,13 +215,11 @@
       }
       &--house {
         position: relative;
-        z-index: 3;
       }
       &--hidden {
         visibility: hidden;
       }
       &--winner {
-        z-index: 3;
         &::before {
           content: "";
           top: 50%;
@@ -240,6 +236,7 @@
             rgba(255, 255, 255, 0.025) 56%
           );
           background-position: center;
+          z-index: -1;
 
           @media only screen and (max-width: 75em) {
             width: 56rem;
