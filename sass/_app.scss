@@ -36,6 +36,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  position: relative;
+  z-index: 4;
 
   @media only screen and (max-width: 47.5em) {
     height: 7.2rem;
@@ -94,6 +96,7 @@
       height: 30.5rem;
       background-size: 75%;
       margin-top: 9rem;
+      margin-bottom: 12rem;
     }
 
     .icon {
@@ -180,13 +183,15 @@
     }
 
     .icon {
-      &--you {
+      &--you-container {
         grid-area: you;
         position: relative;
+        z-index: 4;
       }
       &--house-container {
         grid-area: house;
         position: relative;
+        // z-index: 4;
       }
       &--empty {
         width: 22.5rem;
@@ -212,12 +217,13 @@
       }
       &--house {
         position: relative;
-        z-index: 4;
+        z-index: 3;
       }
       &--hidden {
         visibility: hidden;
       }
       &--winner {
+        z-index: 3;
         &::before {
           content: "";
           top: 50%;
@@ -234,7 +240,6 @@
             rgba(255, 255, 255, 0.025) 56%
           );
           background-position: center;
-          z-index: -1;
 
           @media only screen and (max-width: 75em) {
             width: 56rem;
@@ -253,6 +258,11 @@
       align-self: center;
       margin-top: -3rem;
       padding: 4rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 4;
 
       .result__text {
         text-transform: uppercase;
@@ -405,5 +415,5 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
