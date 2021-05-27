@@ -12,16 +12,16 @@
     margin: 3rem 3rem 0 3rem;
   }
 
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 47.5em) {
     padding: 1rem 1rem 1rem 2rem;
   }
 
   &__logo {
     display: block;
 
-    @media only screen and (max-width: 37.5em) {
-      height: 5rem;
-      width: 5rem;
+    @media only screen and (max-width: 47.5em) {
+      height: 6rem;
+      width: 6rem;
     }
   }
 }
@@ -37,7 +37,7 @@
   justify-content: space-between;
   padding: 2rem;
 
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 47.5em) {
     height: 7.2rem;
     width: 8rem;
     padding: 1.4rem;
@@ -51,7 +51,7 @@
     line-height: 0.7;
     text-transform: uppercase;
 
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 47.5em) {
       font-size: 1rem;
     }
   }
@@ -61,8 +61,229 @@
     font-size: 6.5rem;
     line-height: 0.8;
 
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 47.5em) {
       font-size: 4.1rem;
+    }
+  }
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  margin-top: -10rem;
+  padding-top: 10rem;
+  margin-bottom: -25rem;
+  padding-bottom: 25rem;
+  overflow: hidden;
+  position: relative;
+
+  &__initial {
+    margin-left: auto;
+    margin-right: auto;
+    width: 47rem;
+    height: 46rem;
+    margin-top: 4.5rem;
+    background-image: url(../images/bg-pentagon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    // background-size: 70%;
+    position: relative;
+
+    @media only screen and (max-width: 47.5em) {
+      width: 31rem;
+      height: 30.5rem;
+      background-size: 75%;
+      margin-top: 9rem;
+    }
+
+    .icon {
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.1s;
+
+      &:hover {
+        transform: scale(0.95);
+      }
+
+      &--scissors {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+          transform: translateX(-50%) scale(0.95);
+        }
+      }
+      &--paper {
+        right: 0;
+        top: 26%;
+      }
+      &--rock {
+        bottom: 0;
+        right: 13%;
+      }
+      &--lizard {
+        bottom: 0;
+        left: 13%;
+      }
+      &--spock {
+        left: 0;
+        top: 26%;
+      }
+    }
+  }
+
+  &__after {
+    display: grid;
+    grid-template-areas:
+      "hyou . hhouse"
+      "you result house";
+    column-gap: 3.5rem;
+    row-gap: 6.5rem;
+    justify-items: center;
+    margin-top: 7rem;
+
+    @media only screen and (max-width: 75em) {
+      column-gap: 2.5rem;
+      row-gap: 5rem;
+      margin-top: 6rem;
+    }
+    @media only screen and (max-width: 56.25em) {
+      grid-template-areas:
+        "you house"
+        "hyou hhouse"
+        "result result";
+      column-gap: 10vw;
+      row-gap: 3rem;
+      margin-top: 9.5rem;
+    }
+    @media only screen and (max-width: 37.5em) {
+      column-gap: 5rem;
+    }
+
+    .heading-3 {
+      font-size: 2.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+
+      @media only screen and (max-width: 37.5em) {
+        font-size: 1.3rem;
+      }
+    }
+
+    .heading--you {
+      grid-area: hyou;
+    }
+    .heading--house {
+      grid-area: hhouse;
+    }
+
+    .icon {
+      &--you {
+        grid-area: you;
+        position: relative;
+      }
+      &--house-container {
+        grid-area: house;
+        position: relative;
+      }
+      &--empty {
+        width: 22.5rem;
+        height: 22.5rem;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        left: 3.4rem;
+        top: 3.5rem;
+
+        @media only screen and (max-width: 75em) {
+          width: 15.6rem;
+          height: 15.6rem;
+          left: 2.3rem;
+          top: 2.7rem;
+        }
+        @media only screen and (max-width: 37.5em) {
+          width: 10rem;
+          height: 10rem;
+          left: 1.6rem;
+          top: 1.6rem;
+        }
+      }
+      &--house {
+        position: relative;
+        z-index: 4;
+      }
+      &--hidden {
+        visibility: hidden;
+      }
+      &--winner {
+        &::before {
+          content: "";
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 73rem;
+          height: 73rem;
+          border-radius: 50%;
+          position: absolute;
+          background-image: radial-gradient(
+            rgba(255, 255, 255, 0.1) 41%,
+            rgba(255, 255, 255, 0.05) 41%,
+            rgba(255, 255, 255, 0.05) 56%,
+            rgba(255, 255, 255, 0.025) 56%
+          );
+          background-position: center;
+          z-index: -1;
+
+          @media only screen and (max-width: 75em) {
+            width: 56rem;
+            height: 56rem;
+          }
+          @media only screen and (max-width: 37.5em) {
+            width: 28rem;
+            height: 28rem;
+          }
+        }
+      }
+    }
+
+    .result {
+      grid-area: result;
+      align-self: center;
+      margin-top: -3rem;
+      padding: 4rem;
+
+      .result__text {
+        text-transform: uppercase;
+        font-size: 5.5rem;
+        line-height: 0.8;
+        margin-bottom: 2.5rem;
+
+        @media only screen and (max-width: 56.25em) {
+          margin-top: 4.5rem;
+        }
+      }
+
+      .btn-again {
+        height: 4.8rem;
+        width: 22rem;
+        border: none;
+        background-color: #fff;
+        border-radius: 0.7rem;
+        font-family: inherit;
+        color: var(--color-text-dark);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.6rem;
+        line-height: 0.8;
+        transition: all 0.1s;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 0 1.5rem 3px hsl(215, 19%, 58%);
+        }
+      }
     }
   }
 }
@@ -87,11 +308,15 @@
   position: absolute;
   right: 3rem;
   bottom: 3rem;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 1.5rem 3px hsl(215, 19%, 58%);
+  }
 
   @media only screen and (max-width: 47.5em) {
-    right: 50%;
-    bottom: 5.5rem;
-    transform: translateX(50%);
+    position: unset;
+    margin: 2rem auto 0;
   }
 }
 

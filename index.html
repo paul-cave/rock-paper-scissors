@@ -33,60 +33,69 @@
       </div>
     </header>
     <main class="game">
-      <div class="game__initial">
+      <div class="game__initial hidden">
         <div class="icon icon--scissors">
-          <img
-            src="./images/icon-scissors.svg"
-            alt="scissors icon"
-            class="icon__image"
-          />
-        </div>
-        <div class="icon icon--paper">
-          <img
-            src="./images/icon-paper.svg"
-            alt="paper icon"
-            class="icon__image"
-          />
-        </div>
-        <div class="icon icon--rock">
-          <img
-            src="./images/icon-rock.svg"
-            alt="rock icon"
-            class="icon__image"
-          />
-        </div>
-        <div class="icon icon--lizard">
-          <img
-            src="./images/icon-lizard.svg"
-            alt="lizard icon"
-            class="icon__image"
-          />
-        </div>
-        <div class="icon icon--spock">
-          <img
-            src="./images/icon-spock.svg"
-            alt="spock icon"
-            class="icon__image"
-          />
-        </div>
-      </div>
-      <div class="game__after hidden">
-        <div class="pick--you">
-          <h3 class="heading-3">You Picked</h3>
-          <div class="icon--your-pick">
-            <div class="icon icon--rock">
-              <img
-                src="./images/icon-rock.svg"
-                alt="rock icon"
-                class="icon__image"
-              />
-            </div>
+          <div class="icon__inner">
+            <img
+              src="./images/icon-scissors.svg"
+              alt="scissors icon"
+              class="icon__image"
+            />
           </div>
         </div>
-        <div class="pick--house">
-          <h3 class="heading-3">The House Picked</h3>
-          <div class="icon--house-pick icon--winner">
-            <div class="icon icon--spock">
+        <div class="icon icon--paper">
+          <div class="icon__inner">
+            <img
+              src="./images/icon-paper.svg"
+              alt="paper icon"
+              class="icon__image"
+            />
+          </div>
+        </div>
+        <div class="icon icon--rock">
+          <div class="icon__inner">
+            <img
+              src="./images/icon-rock.svg"
+              alt="rock icon"
+              class="icon__image"
+            />
+          </div>
+        </div>
+        <div class="icon icon--lizard">
+          <div class="icon__inner">
+            <img
+              src="./images/icon-lizard.svg"
+              alt="lizard icon"
+              class="icon__image"
+            />
+          </div>
+        </div>
+        <div class="icon icon--spock">
+          <div class="icon__inner">
+            <img
+              src="./images/icon-spock.svg"
+              alt="spock icon"
+              class="icon__image"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="game__after">
+        <h3 class="heading-3 heading--you">You Picked</h3>
+        <div class="icon icon--rock icon--you icon--winner">
+          <div class="icon__inner">
+            <img
+              src="./images/icon-rock.svg"
+              alt="rock icon"
+              class="icon__image"
+            />
+          </div>
+        </div>
+        <h3 class="heading-3 heading--house">The House Picked</h3>
+        <div class="icon--house-container">
+          <div class="icon--empty"></div>
+          <div class="icon icon--spock icon--house icon--winner">
+            <div class="icon__inner">
               <img
                 src="./images/icon-spock.svg"
                 alt="spock icon"

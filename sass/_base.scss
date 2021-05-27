@@ -46,15 +46,12 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  height: 100%;
+  background-image: var(--gradient-background);
+  background-size: cover;
 }
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
-  background-image: var(--gradient-background);
   color: #fff;
-  height: calc(100vh - 5rem);
-
-  @media only screen and (max-width: 47.5em) {
-    height: calc(100vh - 3rem);
-  }
 }

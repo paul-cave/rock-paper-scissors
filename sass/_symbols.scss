@@ -1,0 +1,146 @@
+@mixin icon-outer-inset-initial($color) {
+  box-shadow: inset 0 -0.6rem $color;
+
+  @media only screen and (max-width: 47.5em) {
+    box-shadow: inset 0 -0.4rem $color;
+  }
+}
+@mixin icon-outer-inset-after($color) {
+  box-shadow: inset 0 -1.3rem $color;
+
+  @media only screen and (max-width: 75em) {
+    box-shadow: inset 0 -0.9rem $color;
+  }
+  @media only screen and (max-width: 37.5em) {
+    box-shadow: inset 0 -0.6rem $color;
+  }
+}
+
+.game {
+  &__initial .icon {
+    width: 14.5rem;
+    height: 14.8rem;
+
+    @media only screen and (max-width: 47.5em) {
+      width: 9.6rem;
+      height: 9.7rem;
+    }
+    &__inner {
+      width: 11rem;
+      height: 11rem;
+      box-shadow: inset 0 0.6rem #bbbdd6;
+      transform: translateY(-2px);
+
+      @media only screen and (max-width: 47.5em) {
+        width: 7.3rem;
+        height: 7.3rem;
+        box-shadow: inset 0 0.4rem #bbbdd6;
+      }
+    }
+    &__image {
+      @media only screen and (max-width: 47.5em) {
+        transform: scale(0.67);
+      }
+    }
+    &--scissors {
+      @include icon-outer-inset-initial(#c86a13);
+    }
+    &--paper {
+      @include icon-outer-inset-initial(#2946bb);
+    }
+    &--rock {
+      @include icon-outer-inset-initial(#9d1732);
+    }
+    &--lizard {
+      @include icon-outer-inset-initial(#5f37aa);
+    }
+    &--spock {
+      @include icon-outer-inset-initial(#2c8fae);
+    }
+  }
+
+  &__after .icon {
+    width: 29.2rem;
+    height: 30rem;
+    // z-index: 11;
+
+    @media only screen and (max-width: 75em) {
+      width: 20.3rem;
+      height: 21rem;
+    }
+    @media only screen and (max-width: 37.5em) {
+      width: 13.2rem;
+      height: 13.3rem;
+    }
+    &__inner {
+      width: 22.5rem;
+      height: 22.5rem;
+      box-shadow: inset 0 1.1rem #bbbdd6;
+      transform: translateY(-3px);
+
+      @media only screen and (max-width: 75em) {
+        width: 15.6rem;
+        height: 15.6rem;
+        box-shadow: inset 0 0.8rem #bbbdd6;
+      }
+      @media only screen and (max-width: 37.5em) {
+        width: 10rem;
+        height: 10rem;
+        transform: translateY(-2px);
+        box-shadow: inset 0 0.6rem #bbbdd6;
+      }
+    }
+    &__image {
+      transform: scale(2);
+
+      @media only screen and (max-width: 75em) {
+        transform: scale(1.4);
+      }
+      @media only screen and (max-width: 37.5em) {
+        transform: scale(0.9);
+      }
+    }
+    &--scissors {
+      @include icon-outer-inset-after(#c86a13);
+    }
+    &--paper {
+      @include icon-outer-inset-after(#2946bb);
+    }
+    &--rock {
+      @include icon-outer-inset-after(#9d1732);
+    }
+    &--lizard {
+      @include icon-outer-inset-after(#5f37aa);
+    }
+    &--spock {
+      @include icon-outer-inset-after(#2c8fae);
+    }
+  }
+}
+
+.icon {
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  &__inner {
+    background-image: linear-gradient(to top, #f1f1f1, #dadada);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  }
+  &--scissors {
+    background-image: var(--gradient-scissors);
+  }
+  &--paper {
+    background-image: var(--gradient-paper);
+  }
+  &--rock {
+    background-image: var(--gradient-rock);
+  }
+  &--lizard {
+    background-image: var(--gradient-lizard);
+  }
+  &--spock {
+    background-image: var(--gradient-spock);
+  }
+}
